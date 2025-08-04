@@ -2,13 +2,39 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Кнопка</title>
+  <meta charset="UTF-8">
+  <title>Каталог меблів</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-    <h2>Переглянути каталог</h2>
-    <a href="https://vitaliy-414.github.io/nzk-projekts/catalog.html">
-        <button style="padding: 10px 20px; font-size: 16px;">Переглянути</button>
-    </a>
+  <h1>Переглянути каталог</h1>
+  <button onclick="location.href='catalog.html'">Переглянути</button>
 </body>
 </html>
