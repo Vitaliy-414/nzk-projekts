@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NZK — сторінка-місток</title>
+  <meta name="robots" content="noindex,nofollow" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '0670769139314132'); // твій Pixel ID
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=0670769139314132&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root { --gap: 16px; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      background: #0f172a; /* slate-900 */
+      color: #e5e7eb;      /* gray-200 */
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 560px;
+      background: #111827; /* gray-900 */
+      border: 1px solid #1f2937; /* gray-800 */
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      text-align: center;
+    }
+    h1 { margin: 0 0 8px; font-size: 24px; letter-spacing: .3px; }
+    p.sub { margin: 0 0 20px; color: #9ca3af; font-size: 14px; }
+    .btns { display: grid; grid-template-columns: 1fr; gap: var(--gap); margin-top: 12px; }
+    a.btn {
+      display: inline-block; text-decoration: none;
+      padding: 14px 18px; border-radius: 12px; font-weight: 600;
+      border: 1px solid #374151; background: #172554; color: #f9fafb;
+      transition: transform .08s ease, opacity .2s ease, background .2s ease;
+    }
+    a.btn:hover { transform: translateY(-1px); }
+    a.btn:active { transform: translateY(0); opacity: .9; }
+    a.btn.secondary { background: #0b3a2e; }
+    .fine { margin-top: 16px; font-size: 12px; color: #6b7280; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>NZK — виберіть дію</h1>
+    <p class="sub">Натисніть одну з кнопок нижче.</p>
+
+    <div class="btns">
+      <!-- ВАЖЛИВО: site без 's' -->
+      <a class="btn" id="go-site" href="http://nzk.com.ua" rel="noopener" target="_blank">Перейти на сайт</a>
+
+      <!-- Telegram bot -->
+      <a class="btn secondary" id="go-bot" href="https://t.me/nzk_helper_bot" rel="noopener" target="_blank">Перейти в бот</a>
+    </div>
+
+    <p class="fine">Піксель встановлено. Кліки відслідковуються як <code>ClickSite</code> та <code>ClickBot</code>.</p>
+  </main>
+
+  <script>
+    // Кастомні події для аналітики
+    document.getElementById('go-site')?.addEventListener('click', function () {
+      if (typeof fbq === 'function') fbq('trackCustom', 'ClickSite');
+    });
+    document.getElementById('go-bot')?.addEventListener('click', function () {
+      if (typeof fbq === 'function') fbq('trackCustom', 'ClickBot');
+    });
+  </script>
+</body>
+</html>
