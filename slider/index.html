@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Слайдер Ліжок NZK</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .slider {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #000;
+    }
+    .controls {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .controls button {
+      background: rgba(0, 123, 255, 0.8);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 0 5px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .controls button:hover {
+      background: rgba(0, 123, 255, 1);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="slider">
+      <div class="slides" id="slides">
+        <img src="1.jpg" alt="Ліжко 1">
+        <img src="2.jpg" alt="Ліжко 2">
+        <img src="3.jpg" alt="Ліжко 3">
+        <img src="4.jpg" alt="Ліжко 4">
+        <img src="5.jpg" alt="Ліжко 5">
+        <img src="6.jpg" alt="Ліжко 6">
+        <img src="7.jpg" alt="Ліжко 7">
+        <img src="8.jpg" alt="Ліжко 8">
+      </div>
+    </div>
+    <div class="controls">
+      <button onclick="stopSlider()">◼ Стоп</button>
+      <button onclick="startSlider()">▶ Старт</button>
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    const slides = document.getElementById('slides');
+    const total = slides.children.length;
+    let interval = setInterval(nextSlide, 5000);
+
+    function nextSlide() {
+      index = (index + 1) % total;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+    function stopSlider() {
+      clearInterval(interval);
+    }
+    function startSlider() {
+      stopSlider();
+      interval = setInterval(nextSlide, 5000);
+    }
+  </script>
+</body>
+</html>
