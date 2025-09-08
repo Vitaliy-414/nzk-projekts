@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>NZK Slider</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #111; display: flex; justify-content: center; align-items: center; height: 100vh; }
+
+    .slider {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+      height: 600px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    }
+
+    .slides {
+      display: flex;
+      width: 800%;
+      height: 100%;
+      animation: slide 32s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0%); }
+      12.5%{ transform: translateX(0%); }
+      25%  { transform: translateX(-100%); }
+      37.5%{ transform: translateX(-100%); }
+      50%  { transform: translateX(-200%); }
+      62.5%{ transform: translateX(-200%); }
+      75%  { transform: translateX(-300%); }
+      87.5%{ transform: translateX(-300%); }
+      100% { transform: translateX(0%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slides">
+      <img src="adriatika.jpg" alt="Adriatika">
+      <img src="belgika.jpg" alt="Belgika">
+      <img src="domenika.jpg" alt="Domenika">
+      <img src="karina_ready.jpg" alt="Karina">
+      <img src="kentuki.jpg" alt="Kentuki">
+      <img src="millenium.jpg" alt="Millenium">
+      <img src="orriella.jpg" alt="Orriella">
+      <img src="yana.jpg" alt="Yana">
+    </div>
+  </div>
+</body>
+</html>
