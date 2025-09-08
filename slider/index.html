@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Слайдер NZK</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+    .slider {
+      position: relative;
+      max-width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      width: 800%;
+      height: 100%;
+      animation: slide 40s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: 100vh;
+      object-fit: contain;
+    }
+    .caption {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      12.5% { transform: translateX(-100%); }
+      25% { transform: translateX(-200%); }
+      37.5% { transform: translateX(-300%); }
+      50% { transform: translateX(-400%); }
+      62.5% { transform: translateX(-500%); }
+      75% { transform: translateX(-600%); }
+      87.5% { transform: translateX(-700%); }
+      100% { transform: translateX(0%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slides">
+      <div>
+        <img src="adriatika.jpg" alt="Адріатика">
+        <div class="caption">Ліжко "Адріатика"</div>
+      </div>
+      <div>
+        <img src="belgika.jpg" alt="Белгіка">
+        <div class="caption">Ліжко "Белгіка"</div>
+      </div>
+      <div>
+        <img src="domenika.jpg" alt="Доменіка">
+        <div class="caption">Ліжко "Доменіка"</div>
+      </div>
+      <div>
+        <img src="karina_ready.jpg" alt="Каріна">
+        <div class="caption">Ліжко "Каріна"</div>
+      </div>
+      <div>
+        <img src="kentuki.jpg" alt="Кентукі">
+        <div class="caption">Ліжко "Кентукі"</div>
+      </div>
+      <div>
+        <img src="millenium.jpg" alt="Міленіум">
+        <div class="caption">Ліжко "Міленіум"</div>
+      </div>
+      <div>
+        <img src="orriella.jpg" alt="Орієлла">
+        <div class="caption">Ліжко "Орієлла"</div>
+      </div>
+      <div>
+        <img src="yana.jpg" alt="Яна">
+        <div class="caption">Ліжко "Яна"</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
