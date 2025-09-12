@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>NZK Карусель</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .slider {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+      height: 600px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .slides img {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .slides img.active {
+      opacity: 1;
+    }
+    /* Верхній шар */
+    .overlay-top {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.3);
+      padding: 5px 15px;
+      border-radius: 8px;
+    }
+    /* Нижній шар */
+    .overlay-bottom {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.3);
+      padding: 5px 12px;
+      border-radius: 8px;
+    }
+    /* Кнопка */
+    .control {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 20px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slides">
+      <img src="domenika_final.jpg" class="active">
+      <img src="domenika_loft.jpg">
+      <img src="karina_bunk_final.jpg">
+      <img src="oriella_final_fixed.jpg">
+      <img src="oriella_loft.jpg">
+      <img src="simona_final.jpg">
+    </div>
+    <div class="overlay-top">nzk.com.ua</div>
+    <div class="overlay-bottom">nzk.com.ua</div>
+    <button class="control" id="toggle">⏸ Стоп</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slides img');
+    let current = 0;
+    let playing = true;
+    let interval = setInterval(nextSlide, 5000);
+
+    function nextSlide() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    document.getElementById('toggle').addEventListener('click', function() {
+      if (playing) {
+        clearInterval(interval);
+        this.textContent = '▶ Старт';
+      } else {
+        interval = setInterval(nextSlide, 5000);
+        this.textContent = '⏸ Стоп';
+      }
+      playing = !playing;
+    });
+  </script>
+</body>
+</html>
