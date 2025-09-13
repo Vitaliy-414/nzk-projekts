@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Слайдер 10 ліжок</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .slider {
+      position: relative;
+      max-width: 1000px;
+      width: 100%;
+      height: 650px;
+      overflow: hidden;
+    }
+    .slides {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slides.active {
+      opacity: 1;
+    }
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .btn {
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <img src="adriatika_ready.jpg" class="slides active">
+    <img src="belgika_cropped.jpg" class="slides">
+    <img src="domenika_final.jpg" class="slides">
+    <img src="domenika_loft.jpg" class="slides">
+    <img src="karina_bunk_final.jpg" class="slides">
+    <img src="millenium_ready.jpg" class="slides">
+    <img src="oriella_final_fixed.jpg" class="slides">
+    <img src="oriella_loft.jpg" class="slides">
+    <img src="simona_final.jpg" class="slides">
+    <img src="yana_alt_ready.jpg" class="slides">
+
+    <div class="controls">
+      <button class="btn" id="toggle">Стоп</button>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    let slides = document.querySelectorAll(".slides");
+    let interval = setInterval(nextSlide, 5000);
+    let playing = true;
+    let toggleBtn = document.getElementById("toggle");
+
+    function nextSlide() {
+      slides[slideIndex].classList.remove("active");
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }
+
+    toggleBtn.addEventListener("click", function() {
+      if (playing) {
+        clearInterval(interval);
+        toggleBtn.textContent = "Старт";
+      } else {
+        interval = setInterval(nextSlide, 5000);
+        toggleBtn.textContent = "Стоп";
+      }
+      playing = !playing;
+    });
+  </script>
+</body>
+</html>
