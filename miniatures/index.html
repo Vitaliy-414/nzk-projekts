@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Каталог ліжок</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .item img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .caption {
+      margin-top: 8px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Наші ліжка</h1>
+  <div class="gallery">
+    <div class="item">
+      <a href="belgika_fixed.jpg" target="_blank">
+        <img src="belgika_mini.jpg" alt="Бельгіка">
+      </a>
+      <div class="caption">Бельгіка</div>
+    </div>
+    <div class="item">
+      <a href="fantyet_fixed.jpg" target="_blank">
+        <img src="fantyet_mini.jpg" alt="Фантьєт">
+      </a>
+      <div class="caption">Фантьєт</div>
+    </div>
+    <div class="item">
+      <a href="adriatika_fixed.jpg" target="_blank">
+        <img src="adriatika_mini.jpg" alt="Адріатика">
+      </a>
+      <div class="caption">Адріатика</div>
+    </div>
+    <div class="item">
+      <a href="bavaria_fixed.jpg" target="_blank">
+        <img src="bavaria_mini.jpg" alt="Баварія">
+      </a>
+      <div class="caption">Баварія</div>
+    </div>
+  </div>
+</body>
+</html>
