@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Галерея мініатюр</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px;
+    }
+    .gallery img {
+      width: 170px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    #bigImage {
+      margin-top: 20px;
+      max-width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+    /* Стиль кнопки */
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: #2a7a2a;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #1f5a1f;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Наші меблі</h2>
+
+  <div class="gallery">
+    <img src="miniatures/adriatika_clean_170.jpg" alt="Адріатика" onclick="showBig('miniatures/adriatika_fixed.jpg')">
+    <img src="miniatures/bavaria_mini.jpg" alt="Баварія" onclick="showBig('miniatures/bavaria_fixed.jpg')">
+    <img src="miniatures/belgika_clean_170.jpg" alt="Бельгіка" onclick="showBig('miniatures/belgika_fixed.jpg')">
+    <img src="miniatures/dalat_mini_170.jpg" alt="Далат" onclick="showBig('miniatures/dalat_big_cleaned.jpg')">
+    <img src="miniatures/fantyet_mini_signed.jpg" alt="Фантьєт" onclick="showBig('miniatures/fantyet_fixed.jpg')">
+    <img src="miniatures/karina_mini_cleaned.jpg" alt="Каріна" onclick="showBig('miniatures/karina_big_cleaned.jpg')">
+    <img src="miniatures/kentuki_mini_170.jpg" alt="Кентукі" onclick="showBig('miniatures/kentuki_big.jpg')">
+    <img src="miniatures/shafa_klasyka_mini_170_cleaned.jpg" alt="Шафа класика" onclick="showBig('miniatures/shafa_klasyka_big_final.jpg')">
+    <img src="miniatures/shafa_mini_170_cleaned.jpg" alt="Шафа" onclick="showBig('miniatures/shafa_big_cleaned.jpg')">
+    <img src="miniatures/tumba_kentuki_mini_cleaned.jpg" alt="Тумба Кентукі" onclick="showBig('miniatures/tumba_kentuki_big_cleaned.jpg')">
+  </div>
+
+  <div>
+    <img id="bigImage" src="miniatures/adriatika_fixed.jpg" alt="Велике фото">
+  </div>
+
+  <!-- Кнопка для переходу у слайдер -->
+  <div>
+    <a href="slider.html" class="btn">Переглянути слайдер</a>
+  </div>
+
+  <script>
+    function showBig(src) {
+      document.getElementById('bigImage').src = src;
+    }
+  </script>
+
+</body>
+</html>
