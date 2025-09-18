@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Мініатюри NZK</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px;
+    }
+    .gallery img {
+      width: 170px;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      border-color: #333;
+    }
+    .button {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background: #2b7a0b;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .button:hover {
+      background: #256608;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Наші мініатюри</h1>
+
+  <div class="gallery">
+    <a href="miniatures/kentuki_big.jpg"><img src="miniatures/kentuki_min_170.jpg" alt="Кентукі"></a>
+    <a href="miniatures/karina_big_cleaned.jpg"><img src="miniatures/karina_mini_cleaned.jpg" alt="Каріна"></a>
+    <a href="miniatures/adriatika_fixed.jpg"><img src="miniatures/adriatika_clean_170.jpg" alt="Адріатика"></a>
+    <a href="miniatures/bavaria_fixed.jpg"><img src="miniatures/bavaria_mini.jpg" alt="Баварія"></a>
+    <a href="miniatures/belgika_fixed.jpg"><img src="miniatures/belgika_clean_170.jpg" alt="Бельгіка"></a>
+    <a href="miniatures/dalat_big_cleaned.jpg"><img src="miniatures/dalat_min_170.jpg" alt="Далат"></a>
+    <a href="miniatures/fantyet_fixed.jpg"><img src="miniatures/fantyet_min_signed.jpg" alt="Фантьєт"></a>
+    <a href="miniatures/shafa_big_cleaned.jpg"><img src="miniatures/shafa_mini_170_cleaned.jpg" alt="Шафа"></a>
+    <a href="miniatures/shafa_klasyka_big_final.jpg"><img src="miniatures/shafa_klasyka_mini_170_cleaned.jpg" alt="Шафа Класика"></a>
+    <a href="miniatures/tumba_kentuki_big_cleaned.jpg"><img src="miniatures/tumba_kentuki_mini_cleaned.jpg" alt="Тумба Кентукі"></a>
+  </div>
+
+  <a class="button" href="slider.html">Переглянути слайдер</a>
+
+</body>
+</html>
