@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Мініатюри ліжок (test)</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #fff; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px; }
+    .grid img { width: 100%; height: auto; cursor: pointer; border-radius: 8px; }
+    .caption { margin-top: 5px; font-weight: bold; }
+    .big { margin-top: 30px; }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    .btn:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+
+  <h2>Мініатюри ліжок</h2>
+  <div class="grid">
+    <div>
+      <a href="fantyet-big.jpg" target="_blank"><img src="fantyet-mini.jpg" alt="Фантьєт"></a>
+      <div class="caption">Фантьєт</div>
+    </div>
+    <div>
+      <a href="bavaria-big.jpg" target="_blank"><img src="bavaria-mini.jpg" alt="Баварія"></a>
+      <div class="caption">Баварія</div>
+    </div>
+    <div>
+      <a href="karina-big.jpg" target="_blank"><img src="karina-mini.jpg" alt="Каріна"></a>
+      <div class="caption">Каріна</div>
+    </div>
+    <div>
+      <a href="kentuki-big.jpg" target="_blank"><img src="kentuki-mini.jpg" alt="Кентукі"></a>
+      <div class="caption">Кентукі</div>
+    </div>
+  </div>
+
+  <div class="big">
+    <img src="fantyet-big.jpg" alt="Ліжко Фантьєт" width="400">
+    <p><b>Ліжко Фантьєт</b></p>
+    <a class="btn" href="../slaider-test/index.html">Перейти на слайдер</a>
+  </div>
+
+</body>
+</html>
