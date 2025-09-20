@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Miniature Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fdfdfd;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      justify-items: center;
+      margin-bottom: 30px;
+    }
+    .gallery img {
+      width: 170px;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      border-color: #444;
+    }
+    .big-preview {
+      margin-top: 20px;
+    }
+    .big-preview img {
+      max-width: 90%;
+      height: auto;
+      border: 2px solid #666;
+      border-radius: 10px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 24px;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Miniature Test Gallery</h1>
+  <div class="gallery">
+    <img src="adriatika-mini.jpg" onclick="showBig('adriatika-big.jpg')" alt="Adriatika">
+    <img src="bavaria-mini.jpg" onclick="showBig('bavaria-big.jpg')" alt="Bavaria">
+    <img src="belgika-mini.jpg" onclick="showBig('belgika-big.jpg')" alt="Belgika">
+    <img src="dalat-mini.jpg" onclick="showBig('dalat-big.jpg')" alt="Dalat">
+    <img src="fantiet-mini.jpg" onclick="showBig('fantiet-big.jpg')" alt="Fantiet">
+    <img src="karina-mini.jpg" onclick="showBig('karina-big.jpg')" alt="Karina">
+  </div>
+
+  <div class="big-preview" id="preview">
+    <img src="adriatika-big.jpg" alt="Preview">
+  </div>
+
+  <a class="btn" href="../slider-test/index.html">Перейти на слайдер</a>
+
+  <script>
+    function showBig(filename) {
+      document.getElementById("preview").innerHTML = '<img src="' + filename + '" alt="Big view">';
+    }
+  </script>
+</body>
+</html>
