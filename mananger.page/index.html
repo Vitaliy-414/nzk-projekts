@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Менеджер</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      margin-bottom: 10px;
+      color: #007bff; /* синій колір */
+    }
+    .info {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-green {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-green:hover {
+      background-color: #218838;
+    }
+    .btn-blue {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-blue:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Менеджер</h1>
+  <div class="info">
+    <p><b>Телефон:</b> +380 501 334 055</p>
+    <p><b>Графік:</b> 9:00–18:00 (крім вихідних)</p>
+  </div>
+
+  <form id="contactForm">
+    <input type="text" placeholder="Ім’я" required><br>
+    <input type="tel" placeholder="Номер телефону" required><br>
+    <button type="submit" class="btn btn-green">Залишити заявку</button>
+  </form>
+
+  <div class="message" id="thankYou">Дякуємо! Наш менеджер зв’яжеться з вами найближчим часом.</div>
+
+  <a href="http://nzk.com.ua">
+    <button class="btn btn-blue">Перейти на сайт</button>
+  </a>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const thankYou = document.getElementById('thankYou');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      thankYou.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
