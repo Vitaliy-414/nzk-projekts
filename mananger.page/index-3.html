@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявка NZK</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2e7d32;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    header p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #1b5e20;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #777;
+      font-size: 14px;
+    }
+    .site-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+    }
+    .site-link a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .site-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Менеджер</h1>
+    <p>Телефон: <a href="tel:+380501334055" style="color:white; text-decoration:none;">+380501334055</a></p>
+    <p>Телефонуйте з 9:00 до 18:00, крім вихідних</p>
+    <p>Залиште заявку — і ми вам передзвонимо</p>
+    <p class="site-link">Наш сайт: <a href="https://nzk.com.ua" target="_blank">nzk.com.ua</a></p>
+  </header>
+
+  <div class="container">
+    <h2>Форма заявки</h2>
+    <form method="post" action="https://script.google.com/macros/s/AKfycbw7qXseDh8i4u9Mye6qVRXPICHSy5uejpl26LcrDfVLt6JSgWsj-wxgOC0QpsI3FBvf43A/exec">
+      <label for="name">Ваше ім’я</label>
+      <input type="text" id="name" name="name" placeholder="Введіть ім’я" required>
+
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" placeholder="+380..." required>
+
+      <label for="message">Коментар</label>
+      <textarea id="message" name="message" rows="4" placeholder="Ваше повідомлення..."></textarea>
+
+      <button type="submit">Відправити</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2025 NZK Furniture. Усі права захищені.
+  </footer>
+</body>
+</html>
