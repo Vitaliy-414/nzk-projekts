@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Сторінка менеджера NZK</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .contact {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+    .link {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .link a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Менеджер NZK</h1>
+  <div class="contact">
+    <p><b>Телефон:</b> +380 501 334 055</p>
+    <p><b>Графік:</b> 9:00–18:00 (крім вихідних)</p>
+  </div>
+
+  <form onsubmit="event.preventDefault(); alert('Дякую!');">
+    <input type="text" name="name" placeholder="Ваше ім’я" required>
+    <input type="tel" name="phone" placeholder="Номер телефону" required>
+    <button class="btn" type="submit">Залишити заявку</button>
+  </form>
+
+  <div class="link">
+    <a href="http://nzk.com.ua" target="_blank">Перейти на сайт NZK</a>
+  </div>
+
+</body>
+</html>
