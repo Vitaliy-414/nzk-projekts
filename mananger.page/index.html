@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Заявка менеджеру</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 30px; }
+    .form-box { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h2 { text-align: center; color: #333; }
+    label { display: block; margin-top: 15px; }
+    input, button { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #28a745; color: white; border: none; font-size: 16px; cursor: pointer; }
+    button:hover { background: #218838; }
+    .info { margin-top: 15px; font-size: 14px; color: #555; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Залиште заявку</h2>
+    <form id="contactForm" method="POST">
+      <label>Ім’я:</label>
+      <input type="text" name="name" required>
+      <label>Телефон:</label>
+      <input type="text" name="phone" required>
+      <button type="submit">Надіслати</button>
+    </form>
+    <div class="info">
+      Менеджер: +380501334055<br>
+      Дзвінки з 9:00 до 18:00 (крім вихідних)<br>
+      <a href="https://nzk.com.ua" target="_blank">Наш сайт</a>
+    </div>
+    <p id="result" style="text-align:center; color:green;"></p>
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxT90uWj_KG2Q-dJMmL8zxgZZKpV-eDQu7TbLBnsHdAXlkNf-xfn57SxqWKSZQ/exec"; // <-- твоє посилання
+    const form = document.getElementById("contactForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: "POST", body: new FormData(form)})
+        .then(() => {
+          result.textContent = "✅ Заявка успішно надіслана!";
+          form.reset();
+        })
+        .catch(() => {
+          result.textContent = "❌ Помилка надсилання!";
+        });
+    });
+  </script>
+</body>
+</html>
