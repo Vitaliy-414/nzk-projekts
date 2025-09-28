@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Менеджер</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #007bff;
+    }
+    .info {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    input {
+      width: 80%;
+      max-width: 300px;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .submit-btn {
+      background-color: #28a745;
+      color: white;
+    }
+    .site-btn {
+      background-color: #007bff;
+      color: white;
+    }
+    .success {
+      color: green;
+      font-size: 20px;
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Менеджер</h1>
+  <div class="info"><b>Телефон:</b> +380 501 334 055</div>
+  <div class="info"><b>Графік:</b> 9:00–18:00 (крім вихідних)</div>
+
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Ім’я" required><br>
+    <input type="tel" name="phone" placeholder="Номер телефону" required><br>
+    <button type="submit" class="submit-btn">Залишити заявку</button>
+  </form>
+
+  <button class="site-btn" onclick="window.location.href='https://nzk.com.ua'">Перейти на сайт</button>
+
+  <div class="success">Дякуємо! Наш менеджер зв’яжеться з вами найближчим часом.</div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwX2vMPxYjWJd_2jY_piy15Gcalc1tcIC8c3iNTqYb6rfSuD4ZOHR_36GfJCB/exec";
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      fetch(scriptURL, { method: "POST", body: formData })
+        .then(response => {
+          document.querySelector(".success").style.display = "block";
+          this.reset();
+        })
+        .catch(error => alert("Помилка! Спробуйте ще раз."));
+    });
+  </script>
+</body>
+</html>
