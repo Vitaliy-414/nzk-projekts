@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мененжер</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      margin: 0 0 6px 0;
+      color: #222;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .manager {
+      margin-bottom: 14px;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+    .manager a {
+      text-decoration: none;
+    }
+    input {
+      width: 100%;
+      padding: 11px 10px;
+      margin: 8px 0;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    button {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 11px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+    button:hover { background-color: #218838; }
+    .site-link {
+      margin-top: 14px;
+      display: block;
+      font-size: 14px;
+    }
+    #status {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #1f6f1f;
+      min-height: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Мененжер</h2>
+    <div class="manager">
+      Тел: <a href="tel:+380501334055">050 133 40 55</a><br>
+      9:00–18:00 (крім вихідних)
+    </div>
+
+    <form action="https://formspree.io/f/myzjpbde" method="POST">
+      <input type="text" name="name" placeholder="Ваше ім’я" required>
+      <input type="tel" name="phone" placeholder="Ваш телефон" required>
+      <button type="submit">Готово</button>
+    </form>
+
+    <div id="status"></div>
+
+    <a class="site-link" href="http://nzk.com.ua" target="_blank" rel="noopener">Оглянути сайт</a>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          statusEl.textContent = "Дякуємо! Заявку надіслано. Ми зв’яжемось з вами.";
+          form.reset(); // очищаємо поля
+        } else {
+          statusEl.textContent = "Помилка під час надсилання. Спробуйте ще раз або зателефонуйте менеджеру.";
+        }
+      } catch (err) {
+        statusEl.textContent = "Немає з’єднання. Спробуйте пізніше або зателефонуйте менеджеру.";
+      }
+    });
+  </script>
+</body>
+</html>
