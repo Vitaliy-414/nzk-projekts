@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мененжер</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .site-button {
+      background-color: #007BFF;
+      margin-top: 15px;
+    }
+
+    .site-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <form class="form-container" action="https://formspree.io/f/myzjpbde" method="POST">
+    <h2>Мененжер: 0501334055</h2>
+    <p>Якщо мененжер не відповідає — залиште свої данні, ми вам перезвонимо</p>
+
+    <label for="name">Ім’я</label>
+    <input type="text" id="name" name="name" placeholder="Ваше ім’я" required>
+
+    <label for="phone">Телефон</label>
+    <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+
+    <button type="submit">Готово</button>
+    <a href="http://nzk.com.ua" target="_blank">
+      <button type="button" class="site-button">Оглянути сайт</button>
+    </a>
+  </form>
+</body>
+</html>
