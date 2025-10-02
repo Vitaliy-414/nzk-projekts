@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мененжер</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f5f5f5; text-align:center; padding:30px; }
+    h1 { color:#333; }
+    form { background:#fff; padding:20px; border-radius:8px; display:inline-block; margin-top:20px; }
+    input { display:block; margin:10px auto; padding:10px; width:250px; border:1px solid #ccc; border-radius:4px; }
+    button { padding:10px 20px; background:#28a745; color:#fff; border:none; border-radius:4px; cursor:pointer; }
+    button:hover { background:#218838; }
+    #status { margin-top:15px; font-weight:bold; color:#006400; }
+    .site-link { display:block; margin-top:20px; font-size:18px; color:#007bff; text-decoration:none; }
+    .site-link:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <h1>Мененжер</h1>
+  <p>Тел: <a href="tel:+380501334055">+38 (050) 133 40 55</a><br>9:00-18:00 (крім вихідних)</p>
+
+  <p><strong>Якщо менeнжер не відповідає – залиште свої дані і ми Вам передзвонимо:</strong></p>
+
+  <form action="https://formspree.io/f/myzjpbde" method="POST">
+    <input type="text" name="name" placeholder="Ваше ім'я" required>
+    <input type="tel" name="phone" placeholder="Ваш телефон" required>
+    <button type="submit">Готово</button>
+  </form>
+
+  <div id="status"></div>
+
+  <a class="site-link" href="http://nzk.com.ua" target="_blank" rel="noopener">Оглянути сайт</a>
+
+  <script>
+    const form = document.querySelector('form');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          statusEl.innerHTML = "Дякуємо, ми зв'яжемося з Вами!";
+          form.reset();
+        } else {
+          statusEl.innerHTML = "Помилка. Спробуйте ще раз.";
+        }
+      } catch (error) {
+        statusEl.innerHTML = "Проблема з мережею.";
+      }
+    });
+  </script>
+</body>
+</html>
