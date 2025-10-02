@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мененжер</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 5px;
+    }
+    .info {
+      margin-bottom: 15px;
+    }
+    form {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      display: inline-block;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: green;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkgreen;
+    }
+    #status {
+      margin-top: 15px;
+      font-weight: bold;
+      color: darkblue;
+    }
+    .site-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Мененжер</h1>
+  <div class="info">
+    📞 <a href="tel:+380501334055">050 133 40 55</a><br>
+    9:00–18:00 (крім вихідних)
+  </div>
+
+  <p>Якщо менeнжер не відповідає — залиште свої дані, ми Вам передзвонимо:</p>
+
+  <form action="https://formspree.io/f/myzjpbdc" method="POST">
+    <input type="text" name="name" placeholder="Ваше ім’я" required>
+    <input type="tel" name="phone" placeholder="Ваш телефон" required>
+    <button type="submit">Готово</button>
+  </form>
+
+  <div id="status"></div>
+
+  <a class="site-link" href="http://nzk.com.ua" target="_blank" rel="noopener">Оглянути сайт</a>
+
+  <script>
+    const form = document.querySelector('form');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        statusEl.textContent = "Дякуємо, ми зв’яжемося з Вами!";
+        form.reset();
+      } else {
+        statusEl.textContent = "Помилка. Спробуйте ще раз.";
+      }
+    });
+  </script>
+</body>
+</html>
