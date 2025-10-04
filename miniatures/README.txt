@@ -1,0 +1,1 @@
+Закинь цей index.html у папку miniature репо nzk-projekts.
