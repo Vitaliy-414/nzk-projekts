@@ -1,0 +1,132 @@
+abouabout-test/index.html<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про нас — NZK</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f6f6f4;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #d0e8d0, #f9f9f9);
+      text-align: center;
+      padding: 50px 15px 40px;
+      font-size: 24px;
+      color: #2c5f2d;
+      font-weight: 600;
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 15px;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #2c5f2d;
+      margin-bottom: 10px;
+      font-size: 22px;
+      border-left: 5px solid #6b8e23;
+      padding-left: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    .collage {
+      width: 100%;
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      opacity: 0.9;
+    }
+
+    footer {
+      background-color: #e5f3e5;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 16px;
+      color: #2c5f2d;
+    }
+
+    a {
+      color: #2c5f2d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Ми — NZK. Ідеї для вашого інтер’єру 🌿
+  </header>
+
+  <section>
+    <h2>Ви знаходитесь на сторінці “Про нас”</h2>
+    <p>Ми — команда, яка понад десять років створює меблі з натурального ясеня та вільхи. 
+       Кожен виріб має свою історію, формується з повагою до дерева і людини, 
+       щоб наповнити дім теплом і гармонією.</p>
+    <img src="../about/collage1_jpg.jpg" alt="Наші вироби" class="collage">
+  </section>
+
+  <section>
+    <h2>Матеріали</h2>
+    <p>Основою нашого виробництва є ясень та вільха. 
+       Ми обираємо деревину високої якості, щоб зберегти природну фактуру 
+       і надати меблям витонченості, яку неможливо підробити.</p>
+    <img src="../about/collage2_jpg.jpg" alt="Матеріали" class="collage">
+  </section>
+
+  <section>
+    <h2>Місія</h2>
+    <p>Наша мета — створювати меблі, які живуть разом із вами: 
+       змінюються, старіють красиво і залишаються улюбленими. 
+       Ми не женемось за трендами — ми формуємо стиль, у якому дерево говорить своєю мовою.</p>
+    <img src="../about/collage3_jpg.jpg" alt="Ідея та місія" class="collage">
+  </section>
+
+  <section>
+    <h2>Вироби NZK</h2>
+    <p>Наш каталог охоплює десятки моделей ліжок, шаф, комодів і тумб. 
+       Ви можете переглянути приклади наших робіт у <a href="../miniatures/">мінікаталозі</a>.</p>
+    <img src="../about/collage4_jpg.jpg" alt="Наші меблі" class="collage">
+  </section>
+
+  <footer>
+    <p>© 2025 NZK — Меблі з ясеня та вільхи | <a href="../index.html">Повернутися на головну</a></p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const revealOnScroll = () => {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) sec.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+
+</body>
+</html>t-test/index.html
