@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Про нас — NZK</title>
+
+<!-- Базові стилі у стилі сторінки about -->
+<style>
+  :root{
+    --bg1:#f8f4ec;         /* світло-дерев'яний градієнт */
+    --bg2:#f3ede4;
+    --card:#faf3e6;        /* підсвітка абзаців */
+    --accent:#bda27a;      /* теплий “дерев’яний” штрих */
+    --green:#3c6d3c;       /* фірмовий зелений */
+    --green-dark:#2c552c;
+    --ink:#2a2a2a;
+    --radius:12px;
+    --shadow: 0 8px 20px rgba(0,0,0,.06);
+  }
+
+  html,body{
+    margin:0;
+    padding:0;
+    color:var(--ink);
+    background:linear-gradient(to bottom,var(--bg1),var(--bg2));
+    font-family:"Segoe UI", Roboto, system-ui, -apple-system, Arial, sans-serif;
+    line-height:1.6;
+  }
+
+  section{
+    max-width:900px;
+    margin:36px auto 56px;
+    padding:0 12px;
+  }
+
+  h2{
+    font-size:1.8rem;
+    text-align:center;
+    margin:0 0 18px;
+    color:#305030;
+    background:rgba(245,235,215,.65);
+    padding:12px 14px;
+    border-radius:10px;
+    box-shadow:var(--shadow);
+  }
+
+  /* Абзаци у “картках” зі світлим тоном, як у about */
+  .para{
+    margin:12px 0 10px;
+    padding:14px 14px 14px 16px;
+    background:rgba(250,245,235,.88);
+    border-left:6px solid var(--accent);
+    border-radius:10px;
+    box-shadow:var(--shadow);
+    text-align:justify;
+  }
+
+  /* Колажі — одразу під абзацом, мінімальні відступи */
+  .collage{
+    width:100%;
+    max-width:900px;
+    display:block;
+    margin:8px auto 16px;     /* мінімальний відступ між абзацом і фото */
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+  }
+
+  /* Кнопка переходу в miniatures */
+  .cta-wrap{ text-align:center; margin:24px 0 10px; }
+  .btn{
+    display:inline-block;
+    background:var(--green);
+    color:#fff;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:10px;
+    font-weight:600;
+    box-shadow:var(--shadow);
+    transform:translateY(0);
+    transition:background .25s ease, transform .2s ease;
+  }
+  .btn:hover{ background:var(--green-dark); transform:translateY(-1px); }
+
+  /* Анімація + scroll-reveal (як у about, але м’якше) */
+  .reveal{
+    opacity:0;
+    transform:translateY(26px);
+    transition:
+      opacity .8s ease,
+      transform .8s ease,
+      box-shadow .3s ease;
+    will-change: opacity, transform;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* Невеликі покращення на дуже вузьких екранах */
+  @media (max-width:420px){
+    h2{ font-size:1.4rem; }
+    .para{ padding:12px; }
+  }
+</style>
+</head>
+<body>
+  <section>
+    <h2 class="reveal">Про компанію NZK</h2>
+
+    <!-- Абзац 1 (твій основний вступ + твоє доповнення) -->
+    <p class="para reveal">
+      Ви знаходитесь на офіційній сторінці виробника меблів NZK. Ми створюємо вироби з натуральної деревини — ясена та вільхи — з повагою до матеріалу і людини, яка цими меблями користуватиметься щодня. Наша мета — щоб дім відчувався затишно, природно й по-справжньому ваш.
+      <br><br>
+      <em>Додаток:</em> Ми свідомо уникаємо штучних ефектів і надмірностей. Простота форм, чесні матеріали, теплі відтінки й продумана ергономіка — це те, що формує характер NZK і дозволяє меблям служити роками.
+    </p>
+    <img class="collage reveal" src="./collage_1.jpg" alt="Колаж 1 — вступ NZK">
+
+    <!-- Абзац 2 (про підхід/якість + твоє доповнення) -->
+    <p class="para reveal">
+      Поєднуємо класичні столярні технології з акуратним сучасним дизайном. Кожен елемент проходить кілька етапів контролю якості, щоб у вашій оселі з’явився не просто предмет інтер’єру, а річ із характером.
+      <br><br>
+      <em>Додаток:</em> У виробництві ми обираємо лако-масляні покриття, що підкреслюють текстуру деревини та водночас захищають її. Це допомагає зберігати природний колір і тактильність, яку так люблять наші клієнти.
+    </p>
+    <img class="collage reveal" src="./collage_2.jpg" alt="Колаж 2 — якість і підхід">
+
+    <!-- Абзац 3 (асортимент + твоє доповнення) -->
+    <p class="para reveal">
+      Наш асортимент: ліжка, шафи, комоди, тумби та інші вироби у стилях від сучасного мінімалізму до класики. Ми допомагаємо підібрати рішення під конкретний простір, колір і бюджет — індивідуально.
+      <br><br>
+      <em>Додаток:</em> Ми віримо у прозору комунікацію: пояснюємо відмінності між моделями, матеріалами, фурнітурою, щоб вибір був усвідомленим. Так народжується довіра — основа кожного нашого проєкту.
+    </p>
+    <img class="collage reveal" src="./collage_3.jpg" alt="Колаж 3 — асортимент NZK">
+
+    <!-- Абзац 4 (матеріали + місія з доповненням) -->
+    <p class="para reveal">
+      <strong>Матеріали.</strong> Ясен і вільха — породи, що відомі міцністю та красивою фактурою. Ми обираємо дошку з перевірених постачань і працюємо так, щоб зберегти природну красу волокон.
+      <br><br>
+      <strong>Місія NZK.</strong> Створювати меблі, які допомагають людям відчувати гармонію вдома. Якісні речі впливають на настрій щодня — тому ми робимо вироби, які приємно бачити, торкатися й використовувати.
+      <br><br>
+      <em>Додаток:</em> В основі кожної моделі — баланс естетики та функції. Ми не женемося за “одноразовим” ефектом: для нас важливо, як виглядає і служить річ сьогодні, завтра і через кілька років.
+    </p>
+    <img class="collage reveal" src="./collage_4.jpg" alt="Колаж 4 — матеріали та місія">
+
+    <!-- Кнопка переходу до miniatures -->
+    <div class="cta-wrap reveal">
+      <a class="btn" href="https://vitaliy-414.github.io/nzk-projekts/miniatures/">
+        Перейти до міні-каталогу
+      </a>
+    </div>
+  </section>
+
+  <!-- Легкий scroll-reveal через IntersectionObserver -->
+  <script>
+    (function(){
+      const items = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            // Одноразове вмикання
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: "0px 0px -40px 0px" });
+
+      items.forEach(el=>{
+        // опціональна затримка через data-delay (якщо захочеш додати)
+        const d = el.getAttribute('data-delay');
+        if(d){ el.style.transitionDelay = d; }
+        io.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
