@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NZK Slider</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 22px;
+    margin: 25px 0 10px;
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  }
+
+  .slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease;
+  }
+
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Анімація шарів */
+  .layer {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+  }
+
+  .slide.active .layer {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .controls {
+    margin: 15px 0;
+  }
+
+  button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    margin: 0 8px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background: #333;
+  }
+</style>
+</head>
+<body>
+
+  <h2>Окремі приклади нашої мебелі в інтер'єрі і різних стилях</h2>
+
+  <div class="slider" id="slider">
+    <div class="slide active">
+      <img src="adriatika-slider-02.jpg.png" alt="Adriatika" />
+      <div class="layer">Adriatika</div>
+    </div>
+    <div class="slide">
+      <img src="belgika-slider-04.jpg.png" alt="Belgika" />
+      <div class="layer">Belgika</div>
+    </div>
+    <div class="slide">
+      <img src="domenika-blue-slider-03.jpg.png" alt="Domenika Blue" />
+      <div class="layer">Domenika Blue</div>
+    </div>
+    <div class="slide">
+      <img src="domenika-light-slider-05.jpg.png" alt="Domenika Light" />
+      <div class="layer">Domenika Light</div>
+    </div>
+    <div class="slide">
+      <img src="domenika-loft-slider-01.jpg.png" alt="Domenika Loft" />
+      <div class="layer">Domenika Loft</div>
+    </div>
+    <div class="slide">
+      <img src="karina-double-slider-06.jpg.png" alt="Karina Double" />
+      <div class="layer">Karina Double</div>
+    </div>
+    <div class="slide">
+      <img src="millenium-slider-07.jpg.png" alt="Millenium" />
+      <div class="layer">Millenium</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="prevBtn">◀ Назад</button>
+    <button id="pauseBtn">⏸ Стоп</button>
+    <button id="nextBtn">Вперед ▶</button>
+  </div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  let interval = setInterval(nextSlide, 4000);
+  let paused = false;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    if (!paused) {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    nextSlide();
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    prevSlide();
+  });
+
+  document.getElementById('pauseBtn').addEventListener('click', () => {
+    paused = !paused;
+    document.getElementById('pauseBtn').textContent = paused ? '▶ Старт' : '⏸ Стоп';
+  });
+</script>
+</body>
+</html>
